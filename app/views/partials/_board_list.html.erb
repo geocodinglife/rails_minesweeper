@@ -1,0 +1,9 @@
+<div class="boards-container">
+  <% @boards.each do |board| %>
+    <article class="board-card">
+      <h5><a href="<%= board_path(board.id) %>"><%= board.name %></a></h5>
+      <p> Author: <%= board.email %></p>
+      <span class="board-card-date"><%= format_created_at_date(board) %></span>
+    </article>
+  <% end %>
+</div>

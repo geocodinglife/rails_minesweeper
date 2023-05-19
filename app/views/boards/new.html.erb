@@ -1,0 +1,19 @@
+<h1>Create a Minesweeper Board</h1>
+<%= form_with(model: @board, url: boards_path, method: :post) do |form| %>
+  <%= form.label :email %>
+  <%= form.text_field :email, required: true %>
+
+  <%= form.label :width %>
+  <%= form.number_field :width, required: true %>
+
+  <%= form.label :height %>
+  <%= form.number_field :height, required: true %>
+
+  <%= form.label :mines %>
+  <%= form.number_field :mines, required: true %>
+
+  <%= form.label :name %>
+  <%= form.text_field :name, required: true %>
+
+  <%= form.submit "Generate Board", class: "btn btn-primary" %>
+<% end %>

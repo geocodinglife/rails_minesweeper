@@ -1,0 +1,46 @@
+  <%= link_to 'Add Board', new_board_path, role: "button", class: "btn btn-primary" %>
+  
+  <%= link_to "View All Boards", boards_path, role: "button", class: "primary" %>
+  
+  <dialog id="board-form-modal" open="false">
+  <article style="min-width: 660px">
+    <a href="#close" aria-label="Cancel" class="close modal-toggle" data-target="board-form-modal"></a>
+    <h3>New Board</h3>
+    <%= form_with(model: Board.new, url: boards_path, local: true) do |form| %>
+      <%= form.hidden_field :authenticity_token, value: form_authenticity_token %>
+
+      <label for="email">Email</label>
+      <%= form.email_field :email, placeholder: "Enter your email", required: true %>
+
+      <div class="grid">
+        <label for="name">
+          <%= form.text_field :name, placeholder: "Board Name", required: true %>
+        </label>
+        <label for="mines">
+          <%= form.number_field :mines, placeholder: "# Mines", required: true %>
+        </label>
+      </div>
+      <div class="grid">
+        <label for="width">
+          <%= form.number_field :width, placeholder: "Enter a width", required: true %>
+        </label>
+        <label for="height">
+          <%= form.number_field :height, placeholder: "Enter a height", required: true %>
+        </label>
+      </div>
+
+      <footer>
+        <div class="modal-action-buttons">
+          <%= form.submit "Create Board", class: "primary modal-action-btn", data: { disable_with: "Create Board" } %>
+          <a href="#cancel" role="button" class="secondary modal-toggle modal-action-btn" data-target="board-form-modal">Cancel</a>
+        </div>
+      </footer>
+    <% end %>
+  </article>
+</dialog>
+
+<div class="latest-boards">
+  <div class="boards-title">Latest Boards</div>
+    <%= render "partials/board_list", boards: @boards %>
+  </div>
+</div>

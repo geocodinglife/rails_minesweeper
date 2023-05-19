@@ -1,0 +1,88 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+ .latest-boards {
+  margin-top: 40px;
+}
+
+.boards-title {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.boards-container {
+  width: 100%;
+  margin: 40px 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:center;
+  gap: 5px;
+}
+
+article.board-card {
+  margin: 0;
+}
+
+.board-card {
+  min-width: 300px;
+  width: 320px;
+}
+
+.board-card-date{
+  font-size: 15px;
+}
+
+.add-board-btn{
+  max-width: 275px;
+}
+
+.minesweeper-board {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.minesweeper-board-row {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+}
+
+.board-cell-icon {
+  background: transparent;
+}
+
+.board-cell {
+  background-color: silver;
+  min-width: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.inline-form-fields {
+  display: grid;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.modal-action-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.modal-action-btn{
+  flex-grow: 1;
+  flex-basis: 0;
+  margin: 0 !important;
+  padding: 0;
+}
+
+.navbar-container {
+  max-width: 80%;
+  margin: auto;
+  padding: 7px 20px;
+  border-bottom: 1px solid #3f3f3e;
+}

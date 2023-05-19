@@ -1,0 +1,20 @@
+<hgroup>
+  <h1><%= @board.name %></h1>
+  <h3><%= @board.email %></h3>
+  <h6><%= @board.mines %> mines</h6>
+</hgroup>
+
+<section>
+  <br>
+  <div class="board-wrapper">
+    <div class="minesweeper-board">
+      <% @board.parsed_board.each do |array| %>
+        <div class="minesweeper-board-row">
+          <% array.each do |i| %>
+            <%= render_cell(i) %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
